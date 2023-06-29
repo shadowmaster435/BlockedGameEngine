@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dha4myyjpdqjm"]
+
+[ext_resource type="Script" path="res://editor_objects/scripts/FlowPoint.gd" id="1_1ti42"]
+[ext_resource type="Texture2D" uid="uid://1kjykaoqcbte" path="res://textures/ui/flow/flow_line.png" id="2_jljgf"]
+[ext_resource type="Texture2D" uid="uid://gw1v7isbxlbc" path="res://textures/ui/flow/flow_node.png" id="3_wpyhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dm7w"]
+
+[node name="FlowPoint" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_1ti42")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6dm7w")
+
+[node name="Texture" type="Node2D" parent="."]
+rotation = 27.3765
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Texture"]
+visible = false
+z_index = -4096
+custom_minimum_size = Vector2(12, 0)
+offset_left = -6.0
+offset_top = 6.0
+offset_right = 6.0
+offset_bottom = 188.0
+rotation = 4.71239
+texture = ExtResource("2_jljgf")
+region_rect = Rect2(0, 0, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 4
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="FlowNode" type="Sprite2D" parent="."]
+texture = ExtResource("3_wpyhc")
+
+[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Area2D" to="." method="_on_area_2d_mouse_shape_exited"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dltlfniojhv34"]
+
+[ext_resource type="Script" path="res://editor_objects/scripts/SnapPoint.gd" id="1_31a8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gsip"]
+
+[node name="SnapPoint" type="Node2D"]
+script = ExtResource("1_31a8i")
+
+[node name="SnapArea" type="Area2D" parent="."]
+
+[node name="SnapArea" type="CollisionShape2D" parent="SnapArea"]
+shape = SubResource("RectangleShape2D_7gsip")
+debug_color = Color(0.5, 0.25, 0.25, 0.5)
+
+[connection signal="area_shape_entered" from="SnapArea" to="." method="_on_snap_area_area_shape_entered"]
+[connection signal="area_shape_exited" from="SnapArea" to="." method="_on_snap_area_area_shape_exited"]
