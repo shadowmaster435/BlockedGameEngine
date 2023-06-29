@@ -36,7 +36,8 @@ SpriteTreeParser="*res://registry/parsers/sprite_tree_parser.gd"
 AnimationCreator="*res://registry/helpers/animation_creator.gd"
 GlobalAnimationPlayer="*res://registry/helpers/animation_player.gd"
 JsonReader="*res://registry/helpers/JSONReader.gd"
-StringHelper="*res://registry/helpers/StringHelper.gd"
+StringHelper="*res://globals/string_helper.gd"
+Main="*res://Main.gd"
 
 [editor]
 

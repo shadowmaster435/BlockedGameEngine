@@ -1,1 +1,11 @@
+res://objects/TextBubble.tscn
+res://objects/script/TextBubble.gd
+res://objects/TyperLetter.tscn
+res://TestSceneScript.gd
+res://editor_objects/Block.tscn
+res://editor_objects/SnapPoint.tscn
+res://editor_objects/FlowPoint.tscn
 res://TestScene.tscn
+res://objects/Menu.tscn
+res://objects/MenuEntry.tscn
+res://objects/Typer.tscn

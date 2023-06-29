@@ -35,8 +35,6 @@ func _process(delta):
 			navigate()
 			if (get_selected() != null):
 				GenericVariables.current_menu_selection = get_selected().entry_name
-		if (Main.debug_mode.contains("print")):
-			print(str(Vector2(index_x, index_y)) + "|" + str(selected_index))
 
 		for child in get_children():
 			if (child != null && get_selected() != null ):

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bglqn2cj43a1w"]
+
+[ext_resource type="Script" path="res://objects/script/TyperLetter.gd" id="1_w03dh"]
+[ext_resource type="Texture2D" uid="uid://ra2kxtjjmbna" path="res://data/texture/typer/text_box/lowercase/a.png" id="2_wqpyt"]
+
+[node name="TyperLetter" type="Node2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_w03dh")
+
+[node name="TyperSound" type="AudioStreamPlayer" parent="."]
+
+[node name="Letter" type="Sprite2D" parent="."]
+texture = ExtResource("2_wqpyt")

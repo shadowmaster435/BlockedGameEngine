@@ -25,6 +25,28 @@ func gen_uuid(length, identifier):
 			result = result + numbers[number_index]
 	return result + "|" + identifier
 
+func contains_any(string: String, chars: Array):
+	var result = false
+	for char in chars:
+		if string.contains(char):
+			result = true
+			break
+	return result
+func erase_provided(string: String, chars: Array):
+	var result = string
+	for char in chars:
+		result.replace(char, "")
+	return result
+
+func find_any(string: String, chars: Array, after: bool = false) -> int:
+	var result = 0
+	for index in string.length() - 1:
+		for char in chars:
+			var sub_str = string.substr(index, char.length())
+			if sub_str == char:
+				result = index + char.length() if after else index
+				return result
+	return 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

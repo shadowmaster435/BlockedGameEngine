@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5jpqcnosx17x"]
 
-[ext_resource type="Script" path="res://objects/scripts/menu.gd" id="1_ck80r"]
+[ext_resource type="Script" path="res://objects/script/Menu.gd" id="1_65v4k"]
 
 [node name="Menu" type="GridContainer"]
 layout_direction = 2
 columns = 2
-script = ExtResource("1_ck80r")
+script = ExtResource("1_65v4k")

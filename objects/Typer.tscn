@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://u2x51c22qiv4"]
+
+[ext_resource type="Script" path="res://objects/script/Typer.gd" id="1_3j4r2"]
+[ext_resource type="PackedScene" uid="uid://bhefvdhsjg7c4" path="res://objects/TextBubble.tscn" id="2_l75ir"]
+
+[node name="Typer" type="Node2D"]
+position = Vector2(247, 277)
+script = ExtResource("1_3j4r2")
+
+[node name="TextBubble" parent="." instance=ExtResource("2_l75ir")]

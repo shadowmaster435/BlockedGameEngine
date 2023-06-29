@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2jr1spi5ccn5"]
+[gd_scene load_steps=2 format=3 uid="uid://b2jr1spi5ccn5"]
 
-[ext_resource type="Script" path="res://objects/scripts/MenuEntry.gd" id="1_1hisq"]
-[ext_resource type="PackedScene" uid="uid://cih54jhsd2cri" path="res://objects/Typer.tscn" id="1_ix26a"]
+[ext_resource type="Script" path="res://objects/script/MenuEntry.gd" id="1_nb5vs"]
 
 [node name="Control" type="CenterContainer"]
 anchors_preset = 15
@@ -9,7 +8,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1hisq")
-
-[node name="Typer" parent="." instance=ExtResource("1_ix26a")]
-position = Vector2(0, 0)
+script = ExtResource("1_nb5vs")

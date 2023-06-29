@@ -18,7 +18,6 @@ func get_sprite_locations(input: Dictionary):
 			if (!DirAccess.dir_exists_absolute(path)):
 				continue
 			else:
-				
 				var files = dir.open(path).get_files()
 				var directories = dir.open(path).get_directories()
 				sub_sub_result[sub_key] = {}
