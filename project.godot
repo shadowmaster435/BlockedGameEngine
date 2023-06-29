@@ -18,7 +18,25 @@ config/icon="res://icon.svg"
 [autoload]
 
 EditorGlobals="*res://globals/editor_globals.gd"
-StringHelper="*res://globals/string_helper.gd"
+Util="*res://globals/util.gd"
+GenericVariables="*res://globals/generic_variables.gd"
+GenericFunctions="*res://globals/generic_functions.gd"
+ValueRegistry="*res://registry/value_registry.gd"
+SpriteRegistry="*res://registry/sprite_registry.gd"
+Registry="*res://registry/registry.gd"
+ObjectRegistry="*res://registry/object_registry.gd"
+MenuRegistry="*res://registry/menu_registry.gd"
+AnimationRegistry="*res://registry/animation_registry.gd"
+ActionRegistry="*res://registry/action_registry.gd"
+ActionParser="*res://registry/parsers/action_parser.gd"
+ConditionParser="*res://registry/parsers/condition_parser.gd"
+MenuParser="*res://registry/parsers/menu_parser.gd"
+OperationParser="*res://registry/parsers/operation_parser.gd"
+SpriteTreeParser="*res://registry/parsers/sprite_tree_parser.gd"
+AnimationCreator="*res://registry/helpers/animation_creator.gd"
+GlobalAnimationPlayer="*res://registry/helpers/animation_player.gd"
+JsonReader="*res://registry/helpers/JSONReader.gd"
+StringHelper="*res://registry/helpers/StringHelper.gd"
 
 [editor]
 
