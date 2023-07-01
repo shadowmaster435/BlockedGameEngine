@@ -1,0 +1,31 @@
+{
+	"positions": {
+		"0": {
+			"x": 0,
+			"y": 0,
+			"curve": 1.0,
+			"length": 100
+		},
+		"1": {
+			"x": 44,
+			"y": 44,
+			"curve": {
+				"x": 1.5,
+				"y": 0.5
+			},
+			"length": 60
+		}
+	},
+	"rotations": {
+		"0": {
+			"rotation": 0,
+			"curve": 1.0,
+			"length": 100
+		},
+		"1": {
+			"rotation": 90,
+			"curve": 1.5,
+			"length": 60
+		}
+	}
+}

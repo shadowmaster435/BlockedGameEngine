@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbw54laemdnlo"]
+
+[ext_resource type="Texture2D" uid="uid://dg8xrhgypc2bm" path="res://textures/ui/statement/else_if_statement_icon.png" id="1_rgqvg"]
+[ext_resource type="Texture2D" uid="uid://l7jwcgmex4mu" path="res://textures/ui/statement/statement_border.png" id="1_xfy5m"]
+
+[node name="Statement" type="Node2D"]
+texture_filter = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 244.0
+offset_top = 83.0
+offset_right = 332.0
+offset_bottom = 339.0
+texture = ExtResource("1_xfy5m")
+region_rect = Rect2(0, 0, 96, 80)
+patch_margin_left = 68
+patch_margin_top = 32
+patch_margin_right = 20
+patch_margin_bottom = 32
+axis_stretch_vertical = 1
+
+[node name="ElseIfStatementIcon" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(16, 24)
+texture = ExtResource("1_rgqvg")

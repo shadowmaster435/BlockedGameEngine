@@ -1,9 +1,5 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 func get_sprite_locations(input: Dictionary):
 	var output = {}
 	var dir = DirAccess
@@ -11,7 +7,6 @@ func get_sprite_locations(input: Dictionary):
 		var val = input[key]
 		var sub_result = {key: {}}
 		for sub_key in val:
-
 			var sub_val = val[sub_key]
 			var sub_sub_result = {}	
 			var path = "res://data/" + sub_val
@@ -32,10 +27,3 @@ func get_sprite_locations(input: Dictionary):
 				sub_result[key].merge(sub_sub_result)
 			output = sub_result
 	return output
-
-
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

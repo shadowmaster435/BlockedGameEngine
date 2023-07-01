@@ -2,15 +2,7 @@ extends Node
 const operator_action_chars = {"+=": "+", "-=": "-", "/=": "/", "*=": "*", "%=": "%"}
 const condition_action_chars = ["==", "<=", ">=", "&&", "!", "!=", "<", ">", "||"]
 var separators = operator_action_chars.values() + condition_action_chars + ["="]
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-func _process(delta):
-	pass
-func open_menu(menu):
-	pass
-func get_operator_action_index(string: String):
-	pass
+
 func split_action(string: String):
 	var val = ""
 	var operator = ""
@@ -39,4 +31,3 @@ func parse_action(dict: Dictionary):
 			parse_action(val)
 		else:
 			GenericVariables.tracked_variables[get_value(val)] = split_action(val["setter"])
-	pass

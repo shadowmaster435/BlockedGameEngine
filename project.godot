@@ -38,6 +38,15 @@ GlobalAnimationPlayer="*res://registry/helpers/animation_player.gd"
 JsonReader="*res://registry/helpers/JSONReader.gd"
 StringHelper="*res://globals/string_helper.gd"
 Main="*res://Main.gd"
+AnimationParser="*res://registry/parsers/animation_parser.gd"
+AnimationReader="*res://registry/helpers/animation_reader.gd"
+
+[debug]
+
+gdscript/warnings/unused_variable=0
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/integer_division=0
 
 [editor]
 

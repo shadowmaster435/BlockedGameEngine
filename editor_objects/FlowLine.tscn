@@ -1,10 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://drinlkwgq0htp"]
+[gd_scene load_steps=3 format=3 uid="uid://drinlkwgq0htp"]
 
-[ext_resource type="Script" path="res://editor_objects/FlowLine.gd" id="1_6wr4t"]
+[ext_resource type="Script" path="res://editor_objects/scripts/FlowLine.gd" id="1_6wr4t"]
+[ext_resource type="Texture2D" uid="uid://1kjykaoqcbte" path="res://textures/ui/flow/flow_line.png" id="2_y62n1"]
 
 [node name="FlowLine" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_6wr4t")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+z_index = -10
+z_as_relative = false
+custom_minimum_size = Vector2(12, 0)
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 34.0
+rotation = 4.71239
+pivot_offset = Vector2(6, 6)
+texture = ExtResource("2_y62n1")
+region_rect = Rect2(0, 0, 16, 32)
+patch_margin_left = 4
+patch_margin_top = 9
+patch_margin_right = 4
+patch_margin_bottom = 8

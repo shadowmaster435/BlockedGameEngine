@@ -25,5 +25,5 @@ func create_registry():
 	pass
 static func get_value(k):
 	return Registry.get_value("sprite_tree", k)
-func _process(delta):
+func _process(_delta):
 	pass

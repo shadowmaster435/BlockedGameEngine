@@ -5,7 +5,7 @@ var connected_point = null
 var connected_block = null
 var queued_point = null
 var disconnected = false
-
+var flow_lines = {}
 var root_pos = Vector2(0, 0)
 
 var enabled = true

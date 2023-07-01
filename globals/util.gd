@@ -1,9 +1,7 @@
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+# Put misc non specific functions here
 
 func to_tf3d(tf: Transform2D):
 	var result = Transform3D(
@@ -13,6 +11,28 @@ func to_tf3d(tf: Transform2D):
 		Vector3(tf.origin.x, tf.origin.y, 0),
 	)
 	return result
+func index_in_bounds(collection, current_index: int, offset, int) -> bool:
+	var ofs_val = current_index + offset
+	var negative = ofs_val > 0
+	var positive = ofs_val < collection.size() - 1
+	return negative && positive
+func get_index_clamped(collection, index):
+	var clamped = clamp(index, 0, collection.size - 1)
+	return collection[clamped]
+func get_bounds_status(val, min, max):
+	if val > max:
+		return "more"
+	elif val < max:
+		return "less"
+	else:
+		return "safe"
+func loop_value(val, min, max):
+	var status = get_bounds_status(val, min, max)
+	return min if status == "more" else max if status == "less" else val
+func to_delta(val, min, max) -> float:
+	return (float(val) - float(min)) / float(max) if float(val) != 0 else 0
+func to_delta_clamped(val, min, max) -> float:
+	return clampf((float(val) - float(min)) / float(max), 0, 1) if float(val) != 0 else 0
 func get_letter_padding(cha, style: String = "text_box"):
 	var padding = 0
 	
@@ -72,6 +92,3 @@ func get_letter_padding(cha, style: String = "text_box"):
 
 	padding = padding + 8
 	return padding
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

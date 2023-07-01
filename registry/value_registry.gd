@@ -6,17 +6,10 @@ var files = {}
 
 func get_value_files():
 	return registry.read_folder("value")
-	
 func _ready():
 	create_registry()
-	pass
-
 func register_value(dict):
-
 	registry.add_assembled_registry("value", dict)
-	pass
-
-
 func create_registry():
 	var files = get_value_files()
 	var assembled = {}
@@ -25,14 +18,6 @@ func create_registry():
 		var entries = json_reader.parse_file(val)
 		if (entries != null):
 			assembled[file] = entries
-				
 	register_value(assembled)
-	pass
-
-static func get_value(k):
+func get_value(k):
 	return Registry.get_value("value", k)
-	
-
-func _process(delta):
-	
-	pass
