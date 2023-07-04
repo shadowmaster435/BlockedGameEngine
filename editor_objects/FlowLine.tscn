@@ -23,3 +23,5 @@ patch_margin_left = 4
 patch_margin_top = 9
 patch_margin_right = 4
 patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

@@ -17,7 +17,7 @@ func index_in_bounds(collection, current_index: int, offset, int) -> bool:
 	var positive = ofs_val < collection.size() - 1
 	return negative && positive
 func get_index_clamped(collection, index):
-	var clamped = clamp(index, 0, collection.size - 1)
+	var clamped = clamp(index, 0, collection.size() - 1)
 	return collection[clamped]
 func get_bounds_status(val, min, max):
 	if val > max:
@@ -29,13 +29,14 @@ func get_bounds_status(val, min, max):
 func loop_value(val, min, max):
 	var status = get_bounds_status(val, min, max)
 	return min if status == "more" else max if status == "less" else val
-func to_delta(val, min, max) -> float:
+func to_delta_reverse(val, min, max) -> float:
 	return (float(val) - float(min)) / float(max) if float(val) != 0 else 0
+func to_delta(val, min, max) -> float:
+	return 1 - (float(val) - float(min)) / float(max) if float(val) != 0 else 1
 func to_delta_clamped(val, min, max) -> float:
 	return clampf((float(val) - float(min)) / float(max), 0, 1) if float(val) != 0 else 0
 func get_letter_padding(cha, style: String = "text_box"):
 	var padding = 0
-	
 	var three_pixel_padding = ["z","a","x","v","r","o","y","q","p","f","k","j","g","b","u","d","h","n","c","A","B","C","D","E","F","H","J","O","P","Q","R","S","U","V","Z"]
 	var two_pixel_padding = []
 	var one_pixel_padding = ["T","t", "I", "L"]
@@ -92,3 +93,17 @@ func get_letter_padding(cha, style: String = "text_box"):
 
 	padding = padding + 8
 	return padding
+func either_equal(first, second, val):
+	return first == val || second == val
+func equal_swapped(first, second, val_1, val_2):
+	return either_equal(first, second, val_1) && either_equal(first, second, val_2)
+func both_equal(first, second, val):
+	return first == val && second == val
+func both_equal_any(first, second, vals=[]):
+	return vals.has(first) && vals.has(second)
+func both_equal_excluding(first, second, exclude, vals:Array):
+	return both_equal(first, second, vals) && !vals.has(exclude)
+func has_excluding(collection, value, exclude):
+	return value != exclude && collection.has(value)
+func has_excluding_any(collection, value, exclude):
+	return !exclude.has(value) && collection.has(value)

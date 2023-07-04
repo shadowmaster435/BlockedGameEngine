@@ -1,0 +1,199 @@
+{
+	"animation": {
+		"test": {
+			"positions": {
+				"0": {
+					"curve": {
+						"x": 1,
+						"y": 1
+					},
+					"length": 122,
+					"x1": 440,
+					"x2": 220,
+					"y1": 440,
+					"y2": 440
+				},
+				"1": {
+					"curve": {
+						"x": 0.25,
+						"y": -1.5
+					},
+					"length": 222,
+					"x1": 220,
+					"x2": 220,
+					"y1": 440,
+					"y2": 220
+				},
+				"2": {
+					"curve": {
+						"x": 1,
+						"y": 1
+					},
+					"length": 50,
+					"x1": 220,
+					"x2": 440,
+					"y1": 220,
+					"y2": 220
+				},
+				"3": {
+					"curve": {
+						"x": 1,
+						"y": 1
+					},
+					"length": 100,
+					"x1": 440,
+					"x2": 440,
+					"y1": 220,
+					"y2": 440
+				}
+			},
+			"rotations": {
+				"0": {
+					"curve": 1,
+					"length": 100,
+					"rotation1": 0,
+					"rotation2": 90
+				},
+				"1": {
+					"curve": 1.5,
+					"length": 100,
+					"rotation1": 90,
+					"rotation2": 0
+				},
+				"2": {
+					"curve": 0.5,
+					"length": 100,
+					"rotation1": 90,
+					"rotation2": 270
+				}
+			}
+		},
+		"test2": {
+			"positions": {
+				"0": {
+					"curve": {
+						"x": 1,
+						"y": 1
+					},
+					"length": 50,
+					"x1": 220,
+					"x2": 440,
+					"y1": 330,
+					"y2": 330
+				},
+				"1": {
+					"curve": {
+						"x": 1,
+						"y": 1
+					},
+					"length": 100,
+					"x1": 440,
+					"x2": 220,
+					"y1": 330,
+					"y2": 330
+				}
+			},
+			"rotations": {
+				"0": {
+					"curve": 0.5,
+					"length": 100,
+					"rotation1": 90,
+					"rotation2": 270
+				},
+				"1": {
+					"curve": 1.5,
+					"length": 100,
+					"rotation1": 90,
+					"rotation2": 0
+				},
+				"2": {
+					"curve": 1,
+					"length": 100,
+					"rotation1": 0,
+					"rotation2": 90
+				}
+			}
+		}
+	},
+	"condition": {
+		"example": {
+			"delims": {
+				"0": "==",
+				"1": "&&"
+			},
+			"strings": {
+				"0": "foo",
+				"1": "bar",
+				"2": "foobar"
+			}
+		}
+	},
+	"constant": {
+		"bar": 2,
+		"foo": 20,
+		"foobar": true
+	},
+	"menu": {
+		"example": {
+			"columns": 2,
+			"entries": {
+				"bar": {
+					"event": {
+
+					}
+				},
+				"barfoo": {
+					"event": {
+
+					}
+				},
+				"foo": {
+					"event": {
+
+					}
+				},
+				"foobar": {
+					"event": {
+
+					}
+				}
+			},
+			"horizontal_padding": 256,
+			"vertical_padding": 32,
+			"x": 128,
+			"y": 128
+		}
+	},
+	"object": {
+
+	},
+	"operation": {
+		"example": {
+			"delims": {
+				"0": "*"
+			},
+			"strings": {
+				"0": "health",
+				"1": "bar"
+			}
+		}
+	},
+	"sprite_tree": {
+		"example": {
+			"misc": {
+				"blank": "res://data/texture/misc/blank.png",
+				"text_bubble": "res://data/texture/misc/text_bubble.png"
+			}
+		}
+	},
+	"value": {
+		"attack_time": 0,
+		"current_attack": "none",
+		"guilt": 0,
+		"guilt_cooldown": 0,
+		"health": 92,
+		"in_attack": false,
+		"karma": 0,
+		"turn": 0
+	}
+}

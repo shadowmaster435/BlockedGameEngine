@@ -2,7 +2,7 @@ extends Node
 
 @onready var registry = get_node("/root/Registry")
 @onready var json_reader = get_node("/root/JsonReader")
-
+var finished = false
 var files = {}
 
 func get_menu_files():
@@ -23,5 +23,6 @@ func create_registry():
 			assembled[file] = entries
 
 	register_menu(assembled)
+	finished = true
 func get_value(k):
 	return Registry.get_value("menu", k)

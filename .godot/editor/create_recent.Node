@@ -1,6 +1,8 @@
-NinePatchRect
-Node2D
-CollisionShape2D
 Area2D
+NinePatchRect
+AnimationTree
+AnimationPlayer
+CollisionShape2D
+Node2D
 CollisionPolygon2D
 Polygon2D

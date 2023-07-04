@@ -1,0 +1,12 @@
+{
+	"x": 128,
+	"y": 128,
+	"columns": 2,
+	"vertical_padding": 32,
+	"horizontal_padding": 256,
+	"entries": {
+		"foo": {"event": {}}, "bar": {"event": {}},
+		"foobar": {"event": {}}, "barfoo": {"event": {}}
+	}
+}
+ 

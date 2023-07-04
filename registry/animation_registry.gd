@@ -3,7 +3,7 @@ extends Node
 @onready var registry = get_node("/root/Registry")
 @onready var json_reader = get_node("/root/JsonReader")
 @onready var creator = get_node("/root/AnimationCreator")
-
+var finished = false
 var files = {}
 
 func _ready():
@@ -23,4 +23,5 @@ func create_registry():
 		if (entries != null):
 			assembled[file] = AnimationParser.parse_animation(entries)
 	register(assembled)
+	finished = true
 

@@ -3,7 +3,7 @@ extends Node
 @onready var registry = get_node("/root/Registry")
 @onready var json_reader = get_node("/root/JsonReader")
 var files = {}
-
+var finished = false
 func get_sprite_trees():
 	return registry.read_folder("sprite_tree")
 func _ready():
@@ -22,7 +22,7 @@ func create_registry():
 		if (entries != null):
 			assembled[file] = entries
 	register_sprite(assembled)
-	pass
+	finished = true
 static func get_value(k):
 	return Registry.get_value("sprite_tree", k)
 func _process(_delta):

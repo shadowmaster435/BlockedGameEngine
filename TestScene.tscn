@@ -1,22 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd4e10m6n4yp6"]
 
 [ext_resource type="Script" path="res://TestSceneScript.gd" id="1_vawsb"]
-[ext_resource type="PackedScene" uid="uid://dha4myyjpdqjm" path="res://editor_objects/FlowPoint.tscn" id="2_ijrhf"]
+[ext_resource type="PackedScene" uid="uid://dha4myyjpdqjm" path="res://editor_objects/FlowPoint.tscn" id="2_3ndtd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vawsb")
 
-[node name="FlowPoint5" parent="." instance=ExtResource("2_ijrhf")]
-position = Vector2(286, 97)
+[node name="FlowPoint2" parent="." instance=ExtResource("2_3ndtd")]
+position = Vector2(138, 178)
 
-[node name="FlowPoint4" parent="." instance=ExtResource("2_ijrhf")]
-position = Vector2(84, 126)
-
-[node name="FlowPoint3" parent="." instance=ExtResource("2_ijrhf")]
-position = Vector2(515, 125)
-
-[node name="FlowPoint2" parent="." instance=ExtResource("2_ijrhf")]
-position = Vector2(207, 232)
-
-[node name="FlowPoint" parent="." instance=ExtResource("2_ijrhf")]
-position = Vector2(420, 341)
+[node name="FlowPoint" parent="." instance=ExtResource("2_3ndtd")]
+position = Vector2(241, 174)

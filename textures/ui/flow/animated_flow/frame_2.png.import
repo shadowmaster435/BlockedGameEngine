@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7o2mqli28ajn"
-path="res://.godot/imported/side_menu_border.png-c87082936cbb803caabe807eb4b3d357.ctex"
+uid="uid://bfld4v63qrlui"
+path="res://.godot/imported/frame_2.png-e7e9ed0c305b9066163bd9193db29acb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ui/side_menu_border.png"
-dest_files=["res://.godot/imported/side_menu_border.png-c87082936cbb803caabe807eb4b3d357.ctex"]
+source_file="res://textures/ui/flow/animated_flow/frame_2.png"
+dest_files=["res://.godot/imported/frame_2.png-e7e9ed0c305b9066163bd9193db29acb.ctex"]
 
 [params]
 

@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 var pos = Vector2(0,0)
@@ -44,21 +45,17 @@ var clear_modifier = false
 var bracket_mode = false
 var has_text_bubble = true
 var typed_length = 0
-
+var prev_letter = ""
 
 const reference_letter = preload("res://objects/TyperLetter.tscn")
 
-func _ready():
-
-
-	pass
-
 func new_letter(provided_letter):
 	var next_letter = reference_letter.instantiate(PackedScene.GEN_EDIT_STATE_DISABLED)
+	
 	next_letter.init(provided_letter,Vector2(current_width, 32 * line), text_style)
 	current_width = current_width + (next_letter.padding + 1)
 	add_child.call_deferred(next_letter)
-
+	prev_letter = provided_letter
 	pass
 
 func type(provided_text, use_bubble: bool = false, clear: bool = false):
@@ -76,10 +73,10 @@ func type(provided_text, use_bubble: bool = false, clear: bool = false):
 
 func display_text(provided_text):
 	clear_pos = true
-	
+	current_width = 0	
 	for index in provided_text:
 		new_letter(index)
-	current_width = 0	
+
 	check_clear()
 
 	
@@ -89,12 +86,9 @@ func display_text(provided_text):
 func tick_display():
 	var bubble = get_node("TextBubble")
 	if insta_type:
-
 		for index in queued_text:
 			new_letter(index)
-
 	elif is_typing():
-
 		new_letter(letter_at_cursor())
 	elif !bracket_mode:
 		parse_bracket_string()

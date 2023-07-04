@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://61f36mg86le4"]
+
+[ext_resource type="PackedScene" uid="uid://dha4myyjpdqjm" path="res://editor_objects/FlowPoint.tscn" id="1_5uc8a"]
+[ext_resource type="Script" path="res://editor_objects/scripts/FlowBlock.gd" id="1_dhjlv"]
+[ext_resource type="Texture2D" uid="uid://b00i3i40i8xcs" path="res://textures/ui/flow/variable_border.png" id="2_yri8e"]
+
+[node name="FlowBlock" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_dhjlv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 108.0
+offset_top = 93.0
+offset_right = 148.0
+offset_bottom = 133.0
+texture = ExtResource("2_yri8e")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="In" parent="NinePatchRect" instance=ExtResource("1_5uc8a")]
+z_index = -1
+position = Vector2(20, -2)
+
+[node name="Out" parent="NinePatchRect" instance=ExtResource("1_5uc8a")]
+z_index = -1
+position = Vector2(20, 42)

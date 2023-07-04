@@ -1,0 +1,41 @@
+{
+	"positions": {
+
+		"0": {
+			"x1": 220.0,
+			"y1": 330.0,
+			"x2": 440.0,
+			"y2": 330.0,
+			"curve": 1.0,
+			"length": 50
+		},
+		"1": {
+			"x1": 440.0,
+			"y1": 330.0,
+			"x2": 220.0,
+			"y2": 330.0,
+			"curve": 1.0,
+			"length": 100
+		}
+	},
+	"rotations": {
+		"2": {
+			"rotation1": 0,
+			"rotation2": 90,
+			"curve": 1.0,
+			"length": 100
+		},
+		"1": {
+			"rotation1": 90,
+			"rotation2": 0,
+			"curve": 1.5,
+			"length": 100
+		},
+		"0": {
+			"rotation1": 90,
+			"rotation2": 270,
+			"curve": 0.5,
+			"length": 100
+		}
+	}
+}

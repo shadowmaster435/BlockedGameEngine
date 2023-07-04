@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://u2425cfngyf0"]
+
+[ext_resource type="Script" path="res://editor_objects/scripts/EditorState.gd" id="1_8i04a"]
+[ext_resource type="Texture2D" uid="uid://cinbd4hnlsg0l" path="res://textures/ui/editor/editor_tab_inactive.png" id="2_6elgf"]
+[ext_resource type="PackedScene" uid="uid://u2x51c22qiv4" path="res://objects/Typer.tscn" id="3_tlmda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1f1g"]
+size = Vector2(96, 32)
+
+[node name="EditorState" type="Node2D"]
+script = ExtResource("1_8i04a")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(0, 32)
+offset_right = 96.0
+offset_bottom = 32.0
+texture = ExtResource("2_6elgf")
+region_rect = Rect2(0, 0, 56, 20)
+patch_margin_left = 16
+patch_margin_top = 20
+patch_margin_right = 16
+
+[node name="Typer" parent="NinePatchRect" instance=ExtResource("3_tlmda")]
+position = Vector2(21, 18)
+
+[node name="ClickArea" type="Area2D" parent="."]
+position = Vector2(38, 6)
+
+[node name="ClickShape" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_r1f1g")

@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbw54laemdnlo"]
+[gd_scene load_steps=5 format=3 uid="uid://cbw54laemdnlo"]
 
+[ext_resource type="Script" path="res://editor_objects/scripts/Statement.gd" id="1_lejyr"]
 [ext_resource type="Texture2D" uid="uid://dg8xrhgypc2bm" path="res://textures/ui/statement/else_if_statement_icon.png" id="1_rgqvg"]
 [ext_resource type="Texture2D" uid="uid://l7jwcgmex4mu" path="res://textures/ui/statement/statement_border.png" id="1_xfy5m"]
+[ext_resource type="PackedScene" uid="uid://dltlfniojhv34" path="res://editor_objects/SnapPoint.tscn" id="4_avkbe"]
 
 [node name="Statement" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_lejyr")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 244.0
 offset_top = 83.0
 offset_right = 332.0
-offset_bottom = 339.0
+offset_bottom = 147.0
 texture = ExtResource("1_xfy5m")
 region_rect = Rect2(0, 0, 96, 80)
 patch_margin_left = 68
@@ -22,3 +25,12 @@ axis_stretch_vertical = 1
 [node name="ElseIfStatementIcon" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(16, 24)
 texture = ExtResource("1_rgqvg")
+
+[node name="InnerSnap" parent="." instance=ExtResource("4_avkbe")]
+position = Vector2(300, 105)
+
+[node name="TopSnap" parent="." instance=ExtResource("4_avkbe")]
+position = Vector2(268, 85)
+
+[node name="BottomSnap" parent="." instance=ExtResource("4_avkbe")]
+position = Vector2(268, 137)

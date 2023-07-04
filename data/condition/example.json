@@ -1,0 +1,6 @@
+{
+	"foo": 20,
+	"bar": 10,
+	"foobar": true,
+	"return": "foo == bar && foobar"
+}

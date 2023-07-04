@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7tnu7fn2kc4q"]
+[gd_scene load_steps=6 format=3 uid="uid://c7tnu7fn2kc4q"]
 
 [ext_resource type="Script" path="res://editor_objects/scripts/Block.gd" id="1_amqjn"]
 [ext_resource type="Texture2D" uid="uid://b878pfs7etrng" path="res://textures/ui/block/block_border.png" id="2_oq8wb"]
 [ext_resource type="PackedScene" uid="uid://dltlfniojhv34" path="res://editor_objects/SnapPoint.tscn" id="3_hpje6"]
+[ext_resource type="PackedScene" uid="uid://u2x51c22qiv4" path="res://objects/Typer.tscn" id="4_4l26e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muod4"]
-size = Vector2(56, 48)
+size = Vector2(113, 48)
 
 [node name="Block" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_amqjn")
-metadata/_edit_group_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(64, 64)
-offset_right = 64.0
+offset_right = 121.0
 offset_bottom = 64.0
 texture = ExtResource("2_oq8wb")
 patch_margin_left = 44
@@ -27,7 +27,7 @@ disable_mode = 2
 collision_layer = 3
 
 [node name="AreaShape" type="CollisionShape2D" parent="NinePatchRect/ClickArea"]
-position = Vector2(32, 28)
+position = Vector2(60.5, 28)
 shape = SubResource("RectangleShape2D_muod4")
 debug_color = Color(0.5, 0.25, 0.25, 0.5)
 
@@ -36,6 +36,11 @@ position = Vector2(24, 54)
 
 [node name="TopSnap" parent="." instance=ExtResource("3_hpje6")]
 position = Vector2(24, 2)
+
+[node name="Typer" parent="." instance=ExtResource("4_4l26e")]
+z_index = 2
+position = Vector2(15, 28)
+metadata/_edit_group_ = true
 
 [connection signal="mouse_shape_entered" from="NinePatchRect/ClickArea" to="." method="_on_click_area_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="NinePatchRect/ClickArea" to="." method="_on_click_area_mouse_shape_exited"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddtpwprofwli6"]
+
+[ext_resource type="Script" path="res://registries/helpers/animated_position.gd" id="1_p4d00"]
+
+[node name="animated_position" type="Node2D"]
+script = ExtResource("1_p4d00")

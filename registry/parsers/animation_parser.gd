@@ -5,15 +5,19 @@ func parse_positions(value_dict: Dictionary):
 	for value_key in value_dict:
 		var step_dict = value_dict[value_key]
 		var value_index = StringHelper.get_int_safe(value_key)
-		var parsed_step_dict = {value_index: {"x": {}, "y": {}, "curve": {}}}
+		var parsed_step_dict = {value_index: {"x2": {}, "y2": {}, "x1": {}, "y1": {}, "curve": {}}}
 		for step_value_key in step_dict:
 			var step_value = step_dict[step_value_key]
 			if step_value_key == "length":
 				parsed_step_dict[value_index]["length"] = step_value
-			if step_value_key == "x":
-				parsed_step_dict[value_index]["x"] = step_value
-			if step_value_key == "y":
-				parsed_step_dict[value_index]["y"] = step_value
+			if step_value_key == "x1":
+				parsed_step_dict[value_index]["x1"] = step_value
+			if step_value_key == "y1":
+				parsed_step_dict[value_index]["y1"] = step_value
+			if step_value_key == "x2":
+				parsed_step_dict[value_index]["x2"] = step_value
+			if step_value_key == "y2":
+				parsed_step_dict[value_index]["y2"] = step_value
 			if step_value_key == "curve":
 				if step_value is Dictionary:
 					parsed_step_dict[value_index]["curve"] = {"x": step_value["x"], "y": step_value["y"]}
@@ -32,8 +36,10 @@ func parse_rotations(value_dict: Dictionary):
 			var step_value = step_dict[step_value_key]
 			if step_value_key == "length":
 				parsed_step_dict[value_index]["length"] = step_value
-			if step_value_key == "rotation":
-				parsed_step_dict[value_index]["rotation"] = step_value
+			if step_value_key == "rotation1":
+				parsed_step_dict[value_index]["rotation1"] = step_value
+			if step_value_key == "rotation2":
+				parsed_step_dict[value_index]["rotation2"] = step_value
 			if step_value_key == "curve":
 				parsed_step_dict[value_index]["curve"] = step_value
 			pass

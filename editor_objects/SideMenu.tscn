@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://ghr54qtj7bbb"]
+
+[ext_resource type="Script" path="res://editor_objects/scripts/SideMenu.gd" id="1_2b47e"]
+[ext_resource type="Texture2D" uid="uid://c7o2mqli28ajn" path="res://textures/ui/flow/menu/side_menu_border.png" id="2_ci6f6"]
+
+[sub_resource type="Animation" id="Animation_4mpb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1000.0]
+}
+
+[sub_resource type="Animation" id="Animation_qox5r"]
+resource_name = "SideMenuToggle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, -2.5),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bx221"]
+_data = {
+"RESET": SubResource("Animation_4mpb4"),
+"SideMenuToggle": SubResource("Animation_qox5r")
+}
+
+[node name="SideMenu" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_2b47e")
+animation_progress = 1000.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bx221")
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 512.0
+offset_bottom = 40.0
+texture = ExtResource("2_ci6f6")
+region_rect = Rect2(0, 0, 20, 56)
+patch_margin_top = 16
+patch_margin_right = 20
+patch_margin_bottom = 16

@@ -1,0 +1,6 @@
+{
+	"foo": 2,
+	"bar": 50,
+	"foobar": 4,
+	"return": "example_1 * foo + bar / foobar"
+}

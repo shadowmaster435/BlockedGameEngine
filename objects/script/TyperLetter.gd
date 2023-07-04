@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 func _ready():
@@ -15,7 +16,7 @@ var non_letter = [" ", "&", "$", "@", "!", "?", ",", ".", "'", "|", "/", "_", "[
 var three_pixel_padding = ["z","0","1","a","x","v","r","o","y","q","p","f","k","j","g","b","u","d","h","n","c","A","B","C","D","E","F","H","J","O","P","Q","R","S","U","V","Z"]
 var two_pixel_padding = []
 var one_pixel_padding = ["T","t", "I", "L"]
-var zero_pixel_padding = ["s"]
+var zero_pixel_padding = []
 var nine_pixel_padding = ["W","X","M"]
 var seven_pixel_padding = ["w"]
 var five_pixel_padding = ["G","2","3","4","5","6","7","8","9","N","Y","K"]
@@ -40,7 +41,6 @@ func init(char, pos, style):
 	var path = "res://data/texture/typer/blank.png" if char == " "  else str("res://data/texture/typer/" + style + "/" + sub_location + "/" + legalized_char_path + ".png")
 	position = pos
 	self.style = style
-
 	if (FileAccess.file_exists(path)):
 		get_node("Letter").set_texture(load(path))
 	else:
@@ -50,8 +50,8 @@ func init(char, pos, style):
 			
 	set_padding(char)
 	if (lowered.has(char)):
-		position = Vector2(pos.x, pos.y - 4)
-	pass
+		position = Vector2(pos.x, pos.y + 4)
+
 
 func _process(_delta):
 	pass
@@ -104,11 +104,16 @@ func set_padding(cha):
 			padding = 0
 		if (negative_three_pixel_padding.has(cha)):
 			padding = -3
-		if ((cha == "e" || cha == "s")):
+		if ((cha == "e")):
 			position.x = position.x - 1
 			position.y = position.y + 1
 			scale = Vector2(1.75,1.75)
 			padding = 4
+		if ((cha == "s")):
+			position.x = position.x - 1
+			position.y = position.y + 1
+			scale = Vector2(1.75,1.75)
+
 	if (cha == " "):
 		padding = -4
 	padding = padding + 8

@@ -1,5 +1,6 @@
 extends Node
 
+# Not very dynamic needs change
 func get_sprite_locations(input: Dictionary):
 	var output = {}
 	var dir = DirAccess

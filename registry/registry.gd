@@ -26,7 +26,11 @@ func load_json(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_as_text()
 func register(r, k, v):
-	registries[r][k] = v
+	if registries.has(r):
+		registries[r][k] = v
+	else:
+		registries[r] = {k: v}
+
 func add_assembled_registry(r, v):
 	registries[r] = v
 func get_registry(r):

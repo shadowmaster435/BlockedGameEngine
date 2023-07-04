@@ -1,10 +1,12 @@
 @tool
 extends Node2D
 
+
 @onready var area_shape = get_node("NinePatchRect/ClickArea/AreaShape")
-@onready var tex = get_node("NinePatchRect")
+@onready var rect = get_node("NinePatchRect")
 @onready var top = get_node("TopSnap")
 @onready var bottom = get_node("BottomSnap")
+
 
 var dragging = false
 var is_root = false
@@ -12,7 +14,9 @@ var root_pos = Vector2(0, 0)
 var root = null
 var block_hover_offset = Vector2(0,0)
 var block_hover_offset_set = false
-
+var x_size = 0
+var y_size = 0
+var block_text = ""
 
 func _process(delta):
 	update_click_area()
@@ -21,6 +25,13 @@ func _process(delta):
 	update()
 func update():
 	is_root = top.connected_point == null
+	y_size = rect.size.y
+	x_size = rect.size.x
+	block_text = "test string"
+	get_node("Typer").display_text(block_text)
+	rect.size.x = get_node("Typer").current_width + 13
+
+
 	if is_root:
 		root_pos = position
 		bottom.owner.root_pos = position
@@ -54,7 +65,7 @@ func drop():
 	bottom.snap()
 func update_click_area():
 	area_shape.position = (area_shape.shape.size / 2) + Vector2(4, 4)
-	area_shape.shape.size = Vector2(tex.size.x - 8, tex.size.y - 16)
+	area_shape.shape.size = Vector2(rect.size.x - 8, rect.size.y - 16)
 	pass
 func update_snap_points():
 	bottom.position.y = area_shape.shape.size.y + 6

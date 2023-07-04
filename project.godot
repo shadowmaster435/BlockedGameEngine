@@ -40,6 +40,11 @@ StringHelper="*res://globals/string_helper.gd"
 Main="*res://Main.gd"
 AnimationParser="*res://registry/parsers/animation_parser.gd"
 AnimationReader="*res://registry/helpers/animation_reader.gd"
+CustomAnimationPlayer="*res://registry/helpers/animation_player.gd"
+ConditionRegistry="*res://registry/condition_registry.gd"
+OperationRegistry="*res://registry/operation_registry.gd"
+FileHelper="*res://registry/helpers/FileHelper.gd"
+StateHelper="*res://globals/state_helper.gd"
 
 [debug]
 
